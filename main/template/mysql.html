@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% load staticfiles %}
+{% block content %}
+
+<br><br>
+
+<div class="row">
+	<div class="col-lg-5 col-sm-12 mb-5">
+		<h3>MySQL</h3>
+		  <div id="database">
+			{% for tabla in nombres %}
+				<a href="#" value="{{ tabla }}">{{ tabla }}</a> <br>
+			{% endfor %}
+		  </div>
+	</div>
+	<div class="col-lg-7 col-sm-12 mb-7">
+		<h3>Tablas <small id="db_m"> </small> </h3>
+		
+		{% csrf_token %}
+		<div id="tables">
+
+		</div>
+		<br>
+		<p>Campos</p>
+		<div id="tables_nombre"></div>
+		<div id="campos">
+
+		</div>
+	</div>
+</div>
+
+<br><br>
+{% endblock %}
+
+{% block javascript %}
+	<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+

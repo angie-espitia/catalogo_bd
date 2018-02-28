@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load staticfiles %}
+{% block content %}
+
+<br>
+<h1 class="my-4 text-center">Catalogo de Datos</h1>
+
+<div class="row">
+	<div class="col-lg-6 col-sm-6 text-center mb-4">
+		<a href="{% url 'mysql-db' %}">
+			<img class="rounded-circle img-fluid d-block mx-auto" src="{% static 'img/mysql.png' %}" alt="" width="200px">
+			<h3>MySQL
+			</h3>
+		</a>
+	</div>
+	<div class="col-lg-6 col-sm-6 text-center mb-4">
+		<a href="{% url 'postgres-db' %}">
+			<img class="rounded-circle img-fluid d-block mx-auto" src="{% static 'img/postgres.png' %}" alt="">
+			<h3>PostgreSQL
+			</h3>
+		</a>
+	</div>
+</div>
+
+{% endblock %}
+
